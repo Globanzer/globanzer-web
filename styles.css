@@ -36,6 +36,10 @@ a { color: var(--gold-2); text-decoration: none; }
   color: var(--text);
 }
 .nav-links { display: flex; gap: 1.75rem; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; }
+.nav-right { display: flex; align-items: center; gap: 1.6rem; }
+.langs { display: flex; gap: 0.65rem; font-size: 0.72rem; letter-spacing: 0.18em; }
+.langs a { color: var(--muted); }
+.langs a[aria-current="page"] { color: var(--gold); }
 .nav-links a { color: var(--muted); }
 .nav-links a:hover { color: var(--text); }
 
