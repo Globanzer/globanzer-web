@@ -179,6 +179,39 @@ cite { color: var(--gold); font-style: normal; font-size: 0.75rem; letter-spacin
 }
 .file dd { margin: 0; font-size: 1.05rem; }
 
+.inquire {
+  padding: 5.5rem 6vw 6rem;
+  border-top: 1px solid var(--hair);
+}
+.inquire-grid {
+  display: grid;
+  grid-template-columns: minmax(16rem, 22rem) minmax(20rem, 32rem);
+  gap: 2.5rem 4rem;
+  align-items: start;
+}
+.inquire form { display: grid; gap: 1rem; }
+.inquire label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.inquire input, .inquire textarea {
+  font: inherit;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--hair);
+  padding: 0.7rem 0.8rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+.inquire textarea { min-height: 6.5rem; resize: vertical; }
+.inquire button { justify-self: start; cursor: pointer; border: 0; }
+.inquire .hp { position: absolute; left: -9999px; }
+#inquire-status { color: var(--gold-2); font-size: 0.9rem; margin: 0.4rem 0 0; }
+
 footer {
   display: flex;
   justify-content: space-between;
@@ -200,7 +233,7 @@ footer strong {
 footer p { margin: 0; }
 
 @media (max-width: 860px) {
-  .pillars, .file dl { grid-template-columns: 1fr; }
+  .pillars, .file dl, .inquire-grid { grid-template-columns: 1fr; }
   .nav-links { display: none; }
   .hero { min-height: 92vh; padding-bottom: 4.5rem; }
 }

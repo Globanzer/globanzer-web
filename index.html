@@ -23,7 +23,7 @@
       <nav class="nav-links">
         <a href="#stance">Stance</a>
         <a href="#file">Company</a>
-        <a href="mailto:Contact.us@globanzer.com">Inquire</a>
+        <a href="#inquire">Inquire</a>
       </nav>
       <nav class="langs" aria-label="Language">
         <a href="/" aria-current="page">EN</a>
@@ -42,7 +42,7 @@
         commercialize goods in the United States, and keep MAP intact — grey-market supply stays outside the house.
       </p>
       <div class="hero-actions">
-        <a class="btn" href="mailto:Contact.us@globanzer.com?subject=Commercial%20inquiry">Request a conversation</a>
+        <a class="btn" href="#inquire">Request a conversation</a>
         <a class="btn-ghost" href="#file">Company file</a>
       </div>
     </div>
@@ -99,6 +99,26 @@
     </dl>
   </section>
 
+  <section class="inquire" id="inquire">
+    <div class="inquire-grid">
+      <header class="section-head">
+        <p class="eyebrow">Inquire</p>
+        <h2>Start a conversation</h2>
+        <p class="lede">Name, company, email, and phone. The message arrives at Contact.us@globanzer.com.</p>
+      </header>
+      <form id="inquire-form" data-sending="Sending…" data-ok="Received. We will reply from Contact.us@globanzer.com." data-err="Could not send. Email Contact.us@globanzer.com directly.">
+        <label>Name <input type="text" name="name" required autocomplete="name" /></label>
+        <label>Company <input type="text" name="company" autocomplete="organization" /></label>
+        <label>Email <input type="email" name="email" required autocomplete="email" /></label>
+        <label>Phone <input type="tel" name="phone" required autocomplete="tel" /></label>
+        <label>Message <textarea name="message" rows="4"></textarea></label>
+        <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+        <button class="btn" type="submit">Send</button>
+        <p id="inquire-status" hidden></p>
+      </form>
+    </div>
+  </section>
+
   <footer>
     <div>
       <strong>GLOBANZER LLC</strong>
@@ -106,5 +126,6 @@
     </div>
     <p class="copy">© 2026 GLOBANZER LLC. All rights reserved.</p>
   </footer>
+  <script src="assets/inquire.js"></script>
 </body>
 </html>

@@ -13,4 +13,7 @@ Repo ya publicado. Preview: https://globanzer-web.contact-us-a17.workers.dev
 5. GoDaddy → globanzer.com → Nameservers → pega esos 2 (salen `domaincontrol.com`).
 6. Cuando `https://www.globanzer.com` cargue la web nueva: Google Sites → quitar dominio personalizado.
 
+## Formulario de contacto
+Los envíos van a **Contact.us@globanzer.com**. La **primera** vez, Formsubmit manda un correo de activación a ese buzón: hay que abrir el enlace. Si no, el form no entrega. Revisa spam.
+
 Terminal Cursor o PowerShell de esta PC: da igual. Login de GoDaddy/Cloudflare: solo Nelson.
