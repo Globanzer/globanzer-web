@@ -6,7 +6,7 @@ El código ya está en `C:\Users\nelso\globanzer-web` (Git instalado, primer com
 
 1. Entra a [github.com](https://github.com) (crea cuenta si no hay, con Contact.us@globanzer.com).
 2. **New repository** → nombre `globanzer-web` → **no** marques README (el repo local ya tiene archivos).
-3. En esa página GitHub muestra comandos. En PowerShell:
+3. En esa página GitHub muestra comandos. **Terminal = esta misma PC** (Windows). Da igual **PowerShell de Windows** o **Terminal de Cursor** (abajo del IDE): es el mismo `C:\`. No uses el iPhone ni otra máquina.
 
 ```powershell
 cd C:\Users\nelso\globanzer-web
