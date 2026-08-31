@@ -1,30 +1,16 @@
-# Pasos Nelson — opción A (Cloudflare Pages)
+# Pasos Nelson — sitio en Cloudflare (oficial)
 
-El código ya está en `C:\Users\nelso\globanzer-web` (Git instalado, primer commit local). **Tú** creas las cuentas; yo no tengo tu login.
+Repo ya publicado. Preview: https://globanzer-web.contact-us-a17.workers.dev
 
-## 1. GitHub (nube del código)
+## Quitar Google Sites y apuntar globanzer.com
 
-1. Entra a [github.com](https://github.com) (crea cuenta si no hay, con Contact.us@globanzer.com).
-2. **New repository** → nombre `globanzer-web` → **no** marques README (el repo local ya tiene archivos).
-3. En esa página GitHub muestra comandos. **Terminal = esta misma PC** (Windows). Da igual **PowerShell de Windows** o **Terminal de Cursor** (abajo del IDE): es el mismo `C:\`. No uses el iPhone ni otra máquina.
+**No borres MX** (`smtp.google.com`). Ahí vive Contact.us@globanzer.com.
 
-```powershell
-cd C:\Users\nelso\globanzer-web
-& "C:\Program Files\Git\cmd\git.exe" remote add origin https://github.com/TU_USUARIO/globanzer-web.git
-& "C:\Program Files\Git\cmd\git.exe" push -u origin main
-```
+1. [dash.cloudflare.com](https://dash.cloudflare.com) → **Add a site** → `globanzer.com` → Free.
+2. Mira el listado de DNS **antes** de cambiar nada: tiene que aparecer **MX → smtp.google.com**. Si no está, para y avísale a Cursor.
+3. Anota los **2 nameservers** que Cloudflare muestra.
+4. Workers & Pages → **globanzer-web** → Settings → Domains → añade `www.globanzer.com` y `globanzer.com`.
+5. GoDaddy → globanzer.com → Nameservers → pega esos 2 (salen `domaincontrol.com`).
+6. Cuando `https://www.globanzer.com` cargue la web nueva: Google Sites → quitar dominio personalizado.
 
-Sustituye `TU_USUARIO`. Te pedirá login de GitHub (navegador o token).
-
-## 2. Cloudflare Pages (hosting)
-
-1. [dash.cloudflare.com](https://dash.cloudflare.com) → sign up (gratis).
-2. **Workers & Pages** → **Create** → **Pages** → **Connect to Git** → autoriza GitHub → elige `globanzer-web`.
-3. Framework: **None**. Build command: vacío. Output directory: `/` (o déjalo vacío si el sitio está en la raíz).
-4. **Save and Deploy**. Te da una URL `*.pages.dev` para ver el sitio **antes** de tocar GoDaddy.
-
-## 3. Dominio (cuando `*.pages.dev` se vea bien)
-
-Custom domain `www.globanzer.com` en el proyecto Pages. GoDaddy DNS: CNAME `www` como Cloudflare indique. **No borres MX.**
-
-Cuando el HTTPS de `www` esté verde, Google Sites deja de ser la web pública.
+Terminal Cursor o PowerShell de esta PC: da igual. Login de GoDaddy/Cloudflare: solo Nelson.
