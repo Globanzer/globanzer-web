@@ -4,7 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>GLOBANZER LLC — Product Merchant</title>
-  <meta name="description" content="GLOBANZER LLC. Florida product merchant. We commercialize goods in the United States with authorized brand and supplier relationships. Orlando." />
+  <meta name="description" content="GLOBANZER LLC. Florida product merchant. Authorized brand relationships, MAP intact. If your brand grows with GLOBANZER, GLOBANZER grows with you. Orlando." />
+  <link rel="canonical" href="https://globanzer.com/" />
+  <meta property="og:title" content="GLOBANZER LLC — Product Merchant" />
+  <meta property="og:description" content="If your brand grows with GLOBANZER, GLOBANZER grows with you. Authorized retail. MAP intact. Orlando." />
+  <meta property="og:url" content="https://globanzer.com/" />
+  <meta property="og:image" content="https://globanzer.com/assets/warehouse-hero.png" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0a0c0f" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -12,16 +19,21 @@
   <link rel="alternate" hreflang="es" href="/es/" />
   <link rel="icon" href="assets/logo-mark.png" type="image/png" />
   <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"GLOBANZER LLC","url":"https://globanzer.com","email":"Contact.us@globanzer.com","telephone":"+1-407-427-5870","address":{"@type":"PostalAddress","streetAddress":"111 N Orange Ave, Suite 800","addressLocality":"Orlando","addressRegion":"FL","postalCode":"32801","addressCountry":"US"}}
+  </script>
 </head>
 <body>
+  <a class="skip" href="#partners">Skip to brands</a>
   <header class="nav">
     <a class="brand" href="#top">
-      <img src="assets/logo-mark.png" alt="" width="36" height="36" />
+      <img src="assets/logo-mark.png" alt="GLOBANZER portal mark" width="36" height="36" />
       <span>GLOBANZER</span>
     </a>
     <div class="nav-right">
       <nav class="nav-links">
         <a href="#stance">Stance</a>
+        <a href="#partners">Brands</a>
         <a href="#file">Company</a>
         <a href="#inquire">Inquire</a>
       </nav>
@@ -33,6 +45,9 @@
   </header>
 
   <section class="hero" id="top">
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/warehouse-hero.png" aria-hidden="true">
+      <source src="assets/hero-loop.mp4" type="video/mp4" />
+    </video>
     <div class="hero-veil"></div>
     <div class="hero-inner">
       <p class="eyebrow">Orlando · Florida LLC · Product merchant</p>
@@ -42,8 +57,8 @@
         commercialize goods in the United States, and keep MAP intact — grey-market supply stays outside the house.
       </p>
       <div class="hero-actions">
-        <a class="btn" href="#inquire">Request a conversation</a>
-        <a class="btn-ghost" href="#file">Company file</a>
+        <a class="btn" href="#partners">For brand owners</a>
+        <a class="btn-ghost" href="#inquire">Request a conversation</a>
       </div>
     </div>
   </section>
@@ -78,6 +93,30 @@
     </div>
   </section>
 
+  <section class="stance" id="partners">
+    <header class="section-head">
+      <p class="eyebrow">For brand owners</p>
+      <h2>If your brand grows with GLOBANZER,<br />GLOBANZER grows with you.</h2>
+    </header>
+    <div class="pillars">
+      <article>
+        <p class="num">01</p>
+        <h3>Your growth is the work</h3>
+        <p>GLOBANZER is not here to get large at your expense. We study the line, name SKUs, and ask to project <em>your</em> presence with the buyer your retailer program already serves.</p>
+      </article>
+      <article>
+        <p class="num">02</p>
+        <h3>More authorized presence</h3>
+        <p>An extra authorized retail door — MAP intact — so more of the product reaches that same consumer. Not a competing wholesaler. Not a channel you did not publish.</p>
+      </article>
+      <article>
+        <p class="num">03</p>
+        <h3>Beside you on the roster</h3>
+        <p>If your brand grows with GLOBANZER, GLOBANZER grows with you — because we would sit on your authorized retailer list. We start at your MOQ, invoice the LLC, and stay at your side as the alliance holds.</p>
+      </article>
+    </div>
+  </section>
+
   <section class="campus">
     <div class="campus-veil"></div>
     <blockquote>
@@ -104,7 +143,7 @@
       <header class="section-head">
         <p class="eyebrow">Inquire</p>
         <h2>Start a conversation</h2>
-        <p class="lede">Name, company, email, and phone. The message arrives at Contact.us@globanzer.com.</p>
+        <p class="lede">Brand owners and authorized suppliers: name, company, email, and phone. The message arrives at Contact.us@globanzer.com.</p>
       </header>
       <form id="inquire-form" data-sending="Sending…" data-ok="Received. We will reply from Contact.us@globanzer.com." data-err="Could not send. Email Contact.us@globanzer.com directly.">
         <label>Name <input type="text" name="name" required autocomplete="name" /></label>
@@ -124,6 +163,11 @@
       <strong>GLOBANZER LLC</strong>
       <p>Product merchant. United States.</p>
     </div>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="#partners">Brands</a>
+      <a href="#file">Company</a>
+      <a href="#inquire">Inquire</a>
+    </nav>
     <p class="copy">© 2026 GLOBANZER LLC. All rights reserved.</p>
   </footer>
   <script src="assets/inquire.js"></script>
