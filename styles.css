@@ -165,6 +165,110 @@ h3 {
 }
 .pillars p:last-child { color: var(--muted); margin: 0; font-size: 0.95rem; }
 
+.diag {
+  padding: 5.5rem 6vw;
+  border-top: 1px solid var(--hair);
+}
+.diag-shell {
+  display: grid;
+  grid-template-columns: minmax(13rem, 17rem) minmax(20rem, 38rem);
+  gap: 2.5rem 4rem;
+  align-items: start;
+  max-width: 64rem;
+}
+.diag-meter + .diag-meter { margin-top: 1.3rem; }
+.diag-meter-label {
+  margin: 0 0 0.5rem;
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.diag-meter-rail {
+  height: 2px;
+  background: rgba(255, 255, 255, 0.09);
+  overflow: hidden;
+}
+.diag-meter-fill {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--gold), var(--gold-2));
+  transition: width 420ms ease;
+}
+.diag-rail { display: flex; gap: 0.45rem; margin-top: 2.2rem; }
+.diag-tick {
+  width: 1.6rem;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.12);
+  transition: background 260ms ease;
+}
+.diag-tick.is-done { background: var(--gold); }
+.diag-tick.is-here { background: var(--gold-2); }
+.diag-step {
+  margin: 0 0 0.7rem;
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.diag-step-2 { margin-top: 1.8rem; }
+.diag-q {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: clamp(1.4rem, 2.6vw, 1.95rem);
+  line-height: 1.25;
+  margin: 0 0 1.6rem;
+  outline: none;
+}
+.diag-q:focus-visible { outline: 2px solid var(--gold); outline-offset: 6px; }
+.diag-options { display: flex; flex-direction: column; gap: 0.6rem; }
+.diag-option {
+  font: inherit;
+  text-align: left;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--hair);
+  padding: 0.85rem 1rem;
+  cursor: pointer;
+  transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+.diag-option:hover {
+  background: rgba(196, 165, 116, 0.1);
+  border-color: var(--gold);
+  transform: translateX(3px);
+}
+.diag-option:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.diag-option.is-picked { border-color: var(--gold); background: rgba(196, 165, 116, 0.14); }
+.diag-back {
+  font: inherit;
+  margin-top: 1.5rem;
+  padding: 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.diag-back:hover { color: var(--gold-2); }
+.diag-back:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+.diag-body { color: var(--muted); margin: 0; font-size: 1rem; }
+.diag-closing {
+  margin: 2rem 0 0;
+  padding-top: 1.3rem;
+  border-top: 1px solid var(--hair);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.diag-mail { margin: 0.5rem 0 0; font-size: 0.9rem; }
+.diag-read { animation: diag-in 420ms ease both; }
+@keyframes diag-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+
 .campus {
   min-height: 28rem;
   display: flex;
@@ -279,7 +383,8 @@ footer strong {
 footer p { margin: 0; }
 
 @media (max-width: 860px) {
-  .pillars, .file dl, .inquire-grid { grid-template-columns: 1fr; }
+  .pillars, .file dl, .inquire-grid, .diag-shell { grid-template-columns: 1fr; }
+  .diag-tick { flex: 1; }
   .nav { flex-wrap: wrap; gap: 0.55rem 1rem; }
   .nav-links {
     display: flex;
@@ -294,4 +399,6 @@ footer p { margin: 0; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .hero-video { display: none; }
+  .diag-meter-fill, .diag-option, .diag-tick { transition: none; }
+  .diag-read { animation: none; }
 }
