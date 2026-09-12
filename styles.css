@@ -221,29 +221,30 @@ h3 {
   position: absolute;
   left: 50%;
   top: 48%;
-  width: 17.5rem;
-  height: 8.2rem;
-  margin: -4.1rem 0 0 -8.75rem;
+  width: 19.2rem;
+  height: 8.8rem;
+  margin: -4.4rem 0 0 -9.6rem;
   border: 1px solid var(--hair);
   border-radius: 50%;
   transform: rotateX(68deg);
   pointer-events: none;
 }
 .orbit-ring {
+  --n: 9;
   position: absolute;
   inset: 0;
   transform-style: preserve-3d;
-  animation: orbit-spin 32s linear infinite;
+  animation: orbit-spin 42s linear infinite;
 }
 .orbit:hover .orbit-ring { animation-play-state: paused; }
 .orbit-card {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 7.4rem;
-  height: 10.2rem;
-  margin: -5.1rem 0 0 -3.7rem;
-  transform: rotateY(calc(var(--i) * 60deg)) translateZ(10.4rem);
+  width: 6.7rem;
+  height: 9.4rem;
+  margin: -4.7rem 0 0 -3.35rem;
+  transform: rotateY(calc(var(--i) * 360deg / var(--n))) translateZ(12.2rem);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   background: #0c0e12;
@@ -254,7 +255,7 @@ h3 {
 .orbit-card img {
   display: block;
   width: 100%;
-  height: 7.6rem;
+  height: 6.9rem;
   object-fit: cover;
 }
 .orbit-card figcaption {
@@ -282,14 +283,14 @@ h3 {
     margin: 0;
     z-index: 2;
   }
-  .orbit-rail { width: 20rem; height: 9.4rem; margin: -4.7rem 0 0 -10rem; }
+  .orbit-rail { width: 22.4rem; height: 10.2rem; margin: -5.1rem 0 0 -11.2rem; }
   .orbit-card {
-    width: 8.1rem;
-    height: 11.2rem;
-    margin: -5.6rem 0 0 -4.05rem;
-    transform: rotateY(calc(var(--i) * 60deg)) translateZ(12.2rem);
+    width: 7.2rem;
+    height: 10.1rem;
+    margin: -5.05rem 0 0 -3.6rem;
+    transform: rotateY(calc(var(--i) * 360deg / var(--n))) translateZ(14.6rem);
   }
-  .orbit-card img { height: 8.5rem; }
+  .orbit-card img { height: 7.5rem; }
 }
 
 .film {
@@ -304,7 +305,7 @@ h3 {
   gap: 0.7rem;
   width: max-content;
   padding: 1.05rem 0;
-  animation: film-run 68s linear infinite;
+  animation: film-run 84s linear infinite;
 }
 .marquee:hover .marquee-track { animation-play-state: paused; }
 .marquee-track img {
@@ -354,26 +355,59 @@ h3 {
 }
 .convert-labs span:nth-child(2) { text-align: center; }
 .convert-labs span:last-child { text-align: right; padding-right: 0.4rem; }
+.convert-stage { position: relative; }
 .convert-stage svg { width: 100%; height: auto; display: block; }
+.convert-mark {
+  position: absolute;
+  right: 3.5%;
+  top: 4%;
+  margin: 0;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0;
+  pointer-events: none;
+  animation: gz-mark 20s ease-in-out infinite;
+}
 .convert-box {
-  animation: gz-box 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation: gz-box 20s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 .convert-fill {
   transform-box: fill-box;
   transform-origin: center bottom;
-  animation: gz-fill 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation: gz-fill 20s ease-in-out infinite;
 }
 @keyframes gz-box {
   0% { transform: translateX(0); opacity: 1; }
-  38% { transform: translateX(210px); opacity: 1; }
-  48% { transform: translateX(238px); opacity: 0; }
-  49%, 88% { transform: translateX(0); opacity: 0; }
-  100% { transform: translateX(0); opacity: 1; }
+  9% { transform: translateX(210px); opacity: 1; }
+  12% { transform: translateX(238px); opacity: 0; }
+  13%, 14% { transform: translateX(0); opacity: 0; }
+  15% { transform: translateX(0); opacity: 1; }
+  24% { transform: translateX(210px); opacity: 1; }
+  27% { transform: translateX(238px); opacity: 0; }
+  28%, 29% { transform: translateX(0); opacity: 0; }
+  30% { transform: translateX(0); opacity: 1; }
+  39% { transform: translateX(210px); opacity: 1; }
+  42% { transform: translateX(238px); opacity: 0; }
+  43%, 44% { transform: translateX(0); opacity: 0; }
+  45% { transform: translateX(0); opacity: 1; }
+  54% { transform: translateX(210px); opacity: 1; }
+  57% { transform: translateX(238px); opacity: 0; }
+  58%, 100% { transform: translateX(0); opacity: 0; }
 }
 @keyframes gz-fill {
-  0%, 36% { transform: scaleY(0.07); }
-  52%, 82% { transform: scaleY(1); }
-  100% { transform: scaleY(0.07); }
+  0%, 8% { transform: scaleY(0.06); }
+  13%, 22% { transform: scaleY(0.28); }
+  28%, 37% { transform: scaleY(0.50); }
+  43%, 52% { transform: scaleY(0.74); }
+  58%, 78% { transform: scaleY(1); }
+  90%, 100% { transform: scaleY(0.06); }
+}
+@keyframes gz-mark {
+  0%, 56% { opacity: 0; }
+  60%, 78% { opacity: 1; }
+  86%, 100% { opacity: 0; }
 }
 .chapter-bleed figcaption {
   position: absolute;
@@ -819,4 +853,5 @@ footer p { margin: 0; }
   .orbit-ring { animation: none; }
   .convert-box { animation: none; opacity: 0; }
   .convert-fill { animation: none; transform: scaleY(1); }
+  .convert-mark { animation: none; opacity: 1; }
 }
