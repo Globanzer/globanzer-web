@@ -204,7 +204,68 @@ h3 {
   width: 100%;
   height: min(78vh, 38rem);
   object-fit: cover;
-  object-position: center 62%;
+  object-position: 62% 48%;
+}
+.frame:nth-child(1) .frame-shot { object-position: 62% 50%; }
+
+.diag, .steps, .doors { position: relative; overflow: visible; }
+.float-card {
+  display: none;
+  margin: 0;
+  border: 1px solid var(--hair);
+  background: #0c0e12;
+  overflow: hidden;
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.42);
+  will-change: transform;
+}
+.float-card img {
+  display: block;
+  width: 100%;
+  height: 22rem;
+  object-fit: cover;
+}
+@media (min-width: 1120px) {
+  .float-card { display: block; position: absolute; z-index: 2; pointer-events: none; width: 13.2rem; }
+  .float-a { right: 5.5vw; top: 7.2rem; }
+  .float-b { right: 5.5vw; top: 6.2rem; }
+  .steps .section-head, .steps-shell { position: relative; z-index: 1; }
+}
+
+.film {
+  padding: 0;
+  border-top: 1px solid var(--hair);
+  border-bottom: 1px solid var(--hair);
+  background: #08090b;
+}
+.marquee { overflow: hidden; }
+.marquee-track {
+  display: flex;
+  gap: 0.7rem;
+  width: max-content;
+  padding: 1.05rem 0;
+  animation: film-run 52s linear infinite;
+}
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee-track img {
+  display: block;
+  flex: none;
+  width: 17.4rem;
+  height: 11.6rem;
+  object-fit: cover;
+  filter: saturate(0.92);
+}
+@keyframes film-run {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.band { margin: 0; }
+.band img {
+  display: block;
+  width: 100%;
+  height: min(54vh, 28rem);
+  object-fit: cover;
+  object-position: center 58%;
 }
 .chapter-bleed figcaption {
   position: absolute;
@@ -620,6 +681,8 @@ footer p { margin: 0; }
 @media (max-width: 860px) {
   .pillars, .frames, .chapter-lines, .file dl, .inquire-grid, .diag-shell, .steps-shell { grid-template-columns: 1fr; }
   .frame-shot { height: 12.5rem; }
+  .marquee-track img { width: 13.2rem; height: 9.2rem; }
+  .band img { height: 16rem; }
   .chapter-bleed img { height: 22rem; }
   .chapter-bleed figcaption { position: relative; inset: auto; padding: 1.6rem 6vw 2.2rem; background: var(--ink); }
   .diag-tick { flex: 1; }
@@ -644,4 +707,6 @@ footer p { margin: 0; }
   .frame:hover { transform: none; }
   .frame-shot, .frame:hover .frame-shot { transform: none; }
   .diag-read, .steps-panel, .doors-flow { animation: none; }
+  .marquee-track { animation: none; }
+  .float-card { transform: none !important; }
 }
