@@ -272,10 +272,10 @@ h3 {
   to { transform: rotateY(-360deg); }
 }
 @media (min-width: 1120px) {
-  .diag { padding-right: 26vw; min-height: 34rem; }
+  .diag { padding-right: calc(26vw + 1.4cm); min-height: 34rem; }
   .orbit {
     position: absolute;
-    right: 3vw;
+    right: calc(3vw + 2.6cm);
     top: 5.2rem;
     width: 22rem;
     height: 26rem;
