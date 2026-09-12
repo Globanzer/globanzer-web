@@ -243,7 +243,7 @@ h3 {
   gap: 0.7rem;
   width: max-content;
   padding: 1.05rem 0;
-  animation: film-run 52s linear infinite;
+  animation: film-run 68s linear infinite;
 }
 .marquee:hover .marquee-track { animation-play-state: paused; }
 .marquee-track img {
@@ -266,6 +266,53 @@ h3 {
   height: min(54vh, 28rem);
   object-fit: cover;
   object-position: center 58%;
+}
+
+.convert {
+  margin-top: 3.4rem;
+  padding-top: 2.4rem;
+  border-top: 1px solid var(--hair);
+  max-width: 44rem;
+}
+.convert h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: clamp(1.45rem, 2.8vw, 2.05rem);
+  line-height: 1.2;
+  margin: 0 0 1.35rem;
+}
+.convert-labs {
+  display: grid;
+  grid-template-columns: 0.95fr 1.1fr 1.35fr;
+  gap: 0.6rem;
+  margin: 0 0 0.55rem;
+  font-size: 0.64rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.convert-labs span:nth-child(2) { text-align: center; }
+.convert-labs span:last-child { text-align: right; padding-right: 0.4rem; }
+.convert-stage svg { width: 100%; height: auto; display: block; }
+.convert-box {
+  animation: gz-box 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+.convert-fill {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: gz-fill 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+@keyframes gz-box {
+  0% { transform: translateX(0); opacity: 1; }
+  38% { transform: translateX(210px); opacity: 1; }
+  48% { transform: translateX(238px); opacity: 0; }
+  49%, 88% { transform: translateX(0); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+@keyframes gz-fill {
+  0%, 36% { transform: scaleY(0.07); }
+  52%, 82% { transform: scaleY(1); }
+  100% { transform: scaleY(0.07); }
 }
 .chapter-bleed figcaption {
   position: absolute;
@@ -709,4 +756,6 @@ footer p { margin: 0; }
   .diag-read, .steps-panel, .doors-flow { animation: none; }
   .marquee-track { animation: none; }
   .float-card { transform: none !important; }
+  .convert-box { animation: none; opacity: 0; }
+  .convert-fill { animation: none; transform: scaleY(1); }
 }
