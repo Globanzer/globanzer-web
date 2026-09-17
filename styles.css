@@ -177,6 +177,20 @@ h3 {
   overflow: hidden;
   transition: transform 380ms cubic-bezier(0.22, 1, 0.36, 1), border-color 280ms ease;
 }
+.frame-media {
+  position: relative;
+  overflow: hidden;
+  height: 15.2rem;
+}
+.frame-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to top, rgba(10, 12, 15, 0.72) 0%, transparent 48%),
+    linear-gradient(120deg, rgba(196, 165, 116, 0.12), transparent 42%);
+}
 .frame:hover {
   transform: translateY(-10px) scale(1.035);
   border-color: var(--gold);
@@ -184,9 +198,9 @@ h3 {
 .frame-shot {
   display: block;
   width: 100%;
-  height: 15.2rem;
+  height: 100%;
   object-fit: cover;
-  transform: scale(1.06);
+  transform: scale(1.08);
   transform-origin: center;
   transition: transform 560ms cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -198,11 +212,16 @@ h3 {
 .chapter-bleed {
   position: relative;
   margin: 0;
+  overflow: hidden;
+}
+.chapter-shot {
+  height: min(78vh, 38rem);
+  overflow: hidden;
 }
 .chapter-bleed img {
   display: block;
   width: 100%;
-  height: min(78vh, 38rem);
+  height: 118%;
   object-fit: cover;
   object-position: 62% 48%;
 }
@@ -216,6 +235,18 @@ h3 {
   margin: 0 auto 2.2rem;
   max-width: 22rem;
   perspective: 900px;
+}
+.orbit::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 48%;
+  width: 16rem;
+  height: 16rem;
+  margin: -8rem 0 0 -8rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(196, 165, 116, 0.16) 0%, transparent 68%);
+  pointer-events: none;
 }
 .orbit-rail {
   position: absolute;
@@ -311,7 +342,8 @@ h3 {
   to { transform: translateX(-50%); }
 }
 
-.band { margin: 0; }
+.band { margin: 0; overflow: hidden; }
+.band-shot { overflow: hidden; }
 .band img {
   display: block;
   width: 100%;
@@ -345,8 +377,20 @@ h3 {
 }
 .convert-labs span:nth-child(2) { text-align: center; }
 .convert-labs span:last-child { text-align: right; padding-right: 0.4rem; }
-.convert-stage { position: relative; }
-.convert-stage svg { width: 100%; height: auto; display: block; }
+.convert-stage { position: relative; perspective: 720px; }
+.convert-stage::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  width: 18rem;
+  height: 12rem;
+  margin: -6rem 0 0 -9rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(196, 165, 116, 0.14) 0%, transparent 70%);
+  pointer-events: none;
+}
+.convert-stage svg { width: 100%; height: auto; display: block; position: relative; }
 .convert-mark {
   position: absolute;
   right: 3.5%;
@@ -542,6 +586,21 @@ h3 {
 .steps, .doors {
   padding: 5.5rem 6vw;
   border-top: 1px solid var(--hair);
+}
+.method-lay { max-width: 64rem; }
+.method-plate {
+  margin: 0 0 2.2rem;
+  overflow: hidden;
+  max-width: 28rem;
+  border: 1px solid var(--hair);
+  background: #0c0e12;
+}
+.method-shot { height: 13.5rem; overflow: hidden; }
+.method-plate img {
+  display: block;
+  width: 100%;
+  height: 122%;
+  object-fit: cover;
 }
 .steps-shell {
   display: grid;
@@ -812,10 +871,11 @@ footer p { margin: 0; }
 
 @media (max-width: 860px) {
   .pillars, .frames, .chapter-lines, .file dl, .inquire-grid, .diag-shell, .steps-shell { grid-template-columns: 1fr; }
-  .frame-shot { height: 12.5rem; }
+  .frame-media { height: 12.5rem; }
   .marquee-track img { width: 13.2rem; height: 9.2rem; }
   .band img { height: 16rem; }
-  .chapter-bleed img { height: 22rem; }
+  .chapter-shot { height: 22rem; }
+  .chapter-bleed img { height: 120%; }
   .chapter-bleed figcaption { position: relative; inset: auto; padding: 1.6rem 6vw 2.2rem; background: var(--ink); }
   .diag-tick { flex: 1; }
   .doors-readout { min-width: 0; flex: 1; }
@@ -841,6 +901,7 @@ footer p { margin: 0; }
   .diag-read, .steps-panel, .doors-flow { animation: none; }
   .marquee-track { animation: none; }
   .orbit-ring { animation: none; }
+  [data-parallax] { transform: none !important; }
   .convert-box { animation: none; opacity: 0; }
   .convert-fill { animation: none; transform: scaleY(1); }
   .convert-mark { animation: none; opacity: 1; }
